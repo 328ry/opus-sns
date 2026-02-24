@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNS運用サービス | 株式会社Opus.net</title>
+  <meta name="description" content="企画・撮影・編集・運用まで一気通貫。人が主役のSNSで、集客と採用を変える。株式会社Opus.netのSNS運用サービス。">
+  <meta property="og:title" content="SNS運用サービス | 株式会社Opus.net">
+  <meta property="og:description" content="企画・撮影・編集・運用まで一気通貫。人が主役のSNSで、集客と採用を変える。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="株式会社Opus.net">
+  <meta property="og:image" content="logo.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #2563eb;
+      --blue-hover: #1d4ed8;
+      --blue-light: #eff6ff;
+      --blue-glow: rgba(37, 99, 235, 0.12);
+      --dark: #1a1a2e;
+      --text: #333;
+      --text-sub: #666;
+      --text-light: #999;
+      --bg: #ffffff;
+      --bg-gray: #f8f9fa;
+      --border: #e5e7eb;
+      --radius: 8px;
+      --radius-lg: 16px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 15px;
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 14px; color: var(--dark);
+    }
+    .nav-logo img {
+      height: 32px; width: auto;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links a {
+      font-size: 13px; font-weight: 500; color: var(--text);
+      transition: color 0.2s; letter-spacing: 0.3px;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta {
+      background: var(--blue); color: #fff !important;
+      padding: 8px 20px; border-radius: 100px;
+      font-size: 13px; font-weight: 700;
+      transition: all 0.2s var(--ease);
+    }
+    .nav-cta:hover {
+      background: var(--blue-hover);
+      box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+    }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px; background: var(--dark);
+      transition: all 0.2s;
+    }
+    .nav-mobile {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.98); z-index: 99;
+      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: 17px; color: var(--dark); font-weight: 500; }
+    .nav-mobile-close {
+      position: absolute; top: 18px; right: 24px; font-size: 28px;
+      color: var(--dark); cursor: pointer; background: none; border: none;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 160px 0 100px;
+      background: var(--bg);
+      position: relative;
+    }
+    .hero-content {
+      max-width: 720px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 900;
+      line-height: 1.4;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+    .hero-en {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--blue);
+      letter-spacing: 0.5px;
+      margin-bottom: 32px;
+    }
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-sub);
+      line-height: 2;
+      margin-bottom: 40px;
+      max-width: 540px;
+    }
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 14px 32px; border-radius: 100px;
+      font-size: 14px; font-weight: 700; cursor: pointer; border: none;
+      transition: all 0.2s var(--ease); font-family: 'Noto Sans JP', sans-serif;
+    }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover {
+      background: var(--blue-hover);
+      box-shadow: 0 4px 16px rgba(37,99,235,0.25);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent; color: var(--dark);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* ===== DATA ===== */
+    .data-strip {
+      background: var(--bg-gray); padding: 48px 0;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .data-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .data-item { text-align: center; }
+    .data-number {
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 900; color: var(--blue); line-height: 1.1;
+    }
+    .data-number .unit { font-size: 14px; font-weight: 700; }
+    .data-label { font-size: 13px; color: var(--text-sub); margin-top: 6px; }
+    .data-source { font-size: 10px; color: var(--text-light); margin-top: 2px; }
+
+    /* ===== SECTION ===== */
+    .section { padding: 96px 0; }
+    .section-gray { background: var(--bg-gray); }
+    .section-label {
+      font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 900; color: var(--dark); line-height: 1.4; margin-bottom: 12px;
+    }
+    .section-desc {
+      font-size: 14px; color: var(--text-sub);
+      max-width: 560px; margin-bottom: 48px;
+    }
+    .section-center { text-align: center; }
+    .section-center .section-desc { margin-left: auto; margin-right: auto; }
+
+    /* Fade */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== PAIN ===== */
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .pain-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;
+      transition: all 0.2s var(--ease);
+    }
+    .pain-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .pain-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .pain-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .pain-desc { font-size: 13px; color: var(--text-sub); line-height: 1.8; }
+
+    /* ===== STRENGTH ===== */
+    .strength-list { display: flex; flex-direction: column; gap: 56px; }
+    .strength-item {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .strength-item:nth-child(even) { direction: rtl; }
+    .strength-item:nth-child(even) > * { direction: ltr; }
+    .strength-visual {
+      background: var(--bg-gray); border-radius: var(--radius-lg);
+      padding: 40px; display: flex; align-items: center; justify-content: center;
+      min-height: 240px; position: relative; overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .strength-number {
+      font-family: 'Lato', sans-serif; font-size: 72px; font-weight: 900;
+      color: var(--blue); opacity: 0.07;
+      position: absolute; top: 12px; left: 20px;
+    }
+    .strength-visual-icon { position: relative; z-index: 1; }
+    .strength-text-label {
+      font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 6px;
+    }
+    .strength-text h3 {
+      font-size: 22px; font-weight: 900; color: var(--dark);
+      margin-bottom: 12px; line-height: 1.5;
+    }
+    .strength-text p { font-size: 14px; color: var(--text-sub); line-height: 2; }
+
+    /* ===== FLOW ===== */
+    .flow-list { display: flex; gap: 0; position: relative; }
+    .flow-list::before {
+      content: ''; position: absolute; top: 28px; left: 28px; right: 28px;
+      height: 2px; background: var(--border);
+    }
+    .flow-step { flex: 1; text-align: center; position: relative; padding: 0 8px; }
+    .flow-number {
+      width: 56px; height: 56px; border-radius: 50%; background: var(--blue);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      font-family: 'Lato', sans-serif; font-size: 20px; font-weight: 700;
+      margin: 0 auto 16px; position: relative; z-index: 1;
+      transition: all 0.2s var(--ease);
+    }
+    .flow-step:hover .flow-number { background: var(--blue-hover); transform: scale(1.08); }
+    .flow-step-title { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .flow-step-desc { font-size: 12px; color: var(--text-light); line-height: 1.5; }
+
+    /* ===== INDUSTRY ===== */
+    .industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .industry-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px 24px;
+      transition: all 0.2s var(--ease); position: relative; overflow: hidden;
+    }
+    .industry-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--blue);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s var(--ease);
+    }
+    .industry-card:hover::before { transform: scaleX(1); }
+    .industry-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .industry-icon { font-size: 36px; margin-bottom: 12px; }
+    .industry-name { font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .industry-desc { font-size: 13px; color: var(--text-sub); line-height: 1.8; }
+    .industry-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .industry-tag {
+      font-size: 11px; padding: 3px 10px; border-radius: 100px;
+      background: var(--blue-light); color: var(--blue); font-weight: 500;
+    }
+
+    /* ===== APPROACH ===== */
+    .approach-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .approach-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px;
+      transition: all 0.2s var(--ease);
+    }
+    .approach-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .approach-step {
+      font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700;
+      color: var(--blue); letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .approach-card h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .approach-card p { font-size: 13px; color: var(--text-sub); line-height: 1.8; }
+
+    /* ===== CTA ===== */
+    .cta-band {
+      background: var(--blue); padding: 64px 0; text-align: center;
+    }
+    .cta-band h2 { font-size: clamp(20px, 3vw, 28px); color: #fff; font-weight: 900; margin-bottom: 12px; }
+    .cta-band p { font-size: 14px; color: rgba(255,255,255,0.8); margin-bottom: 28px; }
+    .btn-white { background: #fff; color: var(--blue); }
+    .btn-white:hover {
+      background: #f0f4ff; transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    /* ===== PRICING ===== */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 28px; }
+    .pricing-card {
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 36px 24px 28px;
+      text-align: center; position: relative;
+      transition: all 0.2s var(--ease);
+    }
+    .pricing-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .pricing-card.featured { border-color: var(--blue); }
+    .pricing-badge {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--blue); color: #fff;
+      font-size: 11px; font-weight: 700; padding: 4px 16px;
+      border-radius: 100px; letter-spacing: 1px; white-space: nowrap;
+    }
+    .pricing-name { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .pricing-target { font-size: 12px; color: var(--text-light); margin-bottom: 16px; }
+    .pricing-price {
+      font-family: 'Lato', sans-serif; font-size: 36px; font-weight: 900;
+      color: var(--dark); margin-bottom: 4px; line-height: 1.1;
+    }
+    .pricing-card.featured .pricing-price { color: var(--blue); }
+    .pricing-price .yen { font-size: 16px; font-weight: 700; }
+    .pricing-price .period { font-size: 13px; color: var(--text-light); font-weight: 400; }
+    .pricing-features { list-style: none; padding: 0; text-align: left; margin: 20px 0; }
+    .pricing-features li {
+      font-size: 13px; padding: 7px 0 7px 26px; position: relative;
+      border-bottom: 1px solid var(--bg-gray); color: var(--text-sub);
+    }
+    .pricing-features li::before {
+      content: ''; position: absolute; left: 0; top: 12px;
+      width: 14px; height: 14px; background: var(--blue); border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+      background-size: 9px; background-position: center; background-repeat: no-repeat;
+    }
+
+    .pricing-sub { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .pricing-sub-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px;
+      display: flex; gap: 16px; align-items: flex-start;
+      transition: all 0.2s var(--ease);
+    }
+    .pricing-sub-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .pricing-sub-icon {
+      width: 44px; height: 44px; border-radius: 10px; background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .pricing-sub-name { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+    .pricing-sub-price {
+      font-family: 'Lato', sans-serif; font-weight: 700; color: var(--blue); font-size: 17px;
+    }
+    .pricing-sub-desc { font-size: 12px; color: var(--text-sub); margin-top: 4px; }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 720px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      width: 100%; background: none; border: none;
+      padding: 20px 36px 20px 0; font-size: 15px; font-weight: 700;
+      color: var(--dark); text-align: left; cursor: pointer;
+      position: relative; font-family: 'Noto Sans JP', sans-serif; line-height: 1.6;
+    }
+    .faq-question::after {
+      content: '+'; position: absolute; right: 0; top: 50%;
+      transform: translateY(-50%); font-size: 22px; font-weight: 300;
+      color: var(--blue); transition: transform 0.2s;
+    }
+    .faq-item.open .faq-question::after { content: '\2212'; }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s var(--ease), padding 0.3s var(--ease);
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 20px; }
+    .faq-answer p { font-size: 14px; color: var(--text-sub); line-height: 2; }
+
+    /* ===== CONTACT ===== */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .contact-info h3 { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+    .contact-info p { font-size: 14px; color: var(--text-sub); margin-bottom: 28px; line-height: 2; }
+    .contact-detail { display: flex; flex-direction: column; gap: 16px; }
+    .contact-detail-item { display: flex; gap: 14px; align-items: flex-start; }
+    .contact-detail-icon {
+      width: 36px; height: 36px; border-radius: 8px; background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .contact-detail-label { font-size: 11px; color: var(--text-light); font-weight: 500; }
+    .contact-detail-value { font-size: 14px; font-weight: 700; color: var(--dark); }
+
+    .contact-form {
+      background: var(--bg-gray); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 36px;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-label {
+      display: block; font-size: 13px; font-weight: 700;
+      color: var(--dark); margin-bottom: 4px;
+    }
+    .form-label .required { font-size: 11px; color: #dc2626; margin-left: 4px; }
+    .form-label .optional { font-size: 11px; color: var(--text-light); margin-left: 4px; }
+    .form-input {
+      width: 100%; padding: 10px 14px; border: 1px solid var(--border);
+      border-radius: var(--radius); font-size: 14px;
+      font-family: 'Noto Sans JP', sans-serif; background: var(--bg);
+      transition: border-color 0.2s, box-shadow 0.2s; color: var(--text);
+    }
+    .form-input:focus {
+      outline: none; border-color: var(--blue);
+      box-shadow: 0 0 0 3px var(--blue-glow);
+    }
+    textarea.form-input { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%; padding: 14px; background: var(--blue); color: #fff;
+      border: none; border-radius: var(--radius); font-size: 15px; font-weight: 700;
+      cursor: pointer; font-family: 'Noto Sans JP', sans-serif;
+      transition: all 0.2s var(--ease);
+    }
+    .form-submit:hover { background: var(--blue-hover); }
+    .form-note { font-size: 12px; color: var(--text-light); margin-top: 10px; text-align: center; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-gray); padding: 40px 0 28px;
+      border-top: 1px solid var(--border); color: var(--text-sub);
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 20px;
+    }
+    .footer-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-weight: 700; font-size: 13px; color: var(--dark);
+    }
+    .footer-logo img {
+      height: 26px; width: auto;
+    }
+    .footer-links { display: flex; gap: 20px; list-style: none; }
+    .footer-links a { font-size: 12px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--blue); }
+    .footer-copy {
+      width: 100%; text-align: center; font-size: 11px; color: var(--text-light);
+      margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .strength-item { grid-template-columns: 1fr; gap: 20px; }
+      .strength-item:nth-child(even) { direction: ltr; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .data-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .pain-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+      .industry-grid { grid-template-columns: 1fr; }
+      .approach-grid { grid-template-columns: 1fr; }
+      .flow-list { flex-direction: column; gap: 20px; }
+      .flow-list::before {
+        top: 28px; bottom: 28px; left: 28px; right: auto; width: 2px; height: auto;
+      }
+      .flow-step {
+        display: flex; align-items: center; gap: 16px; text-align: left; padding: 0;
+      }
+      .flow-number { width: 48px; height: 48px; font-size: 18px; flex-shrink: 0; margin: 0; }
+      .pricing-sub { grid-template-columns: 1fr; }
+      .hero { padding: 120px 0 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="logo.png" alt="opus.net" width="120" height="32">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#service">サービス</a></li>
+        <li><a href="#flow">導入の流れ</a></li>
+        <li><a href="#industry">対応業種</a></li>
+        <li><a href="#pricing">料金</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile" id="mobileMenu">
+    <button class="nav-mobile-close" id="mobileClose" aria-label="閉じる">&times;</button>
+    <a href="#service" class="mobile-link">サービス</a>
+    <a href="#flow" class="mobile-link">導入の流れ</a>
+    <a href="#industry" class="mobile-link">対応業種</a>
+    <a href="#pricing" class="mobile-link">料金</a>
+    <a href="#faq" class="mobile-link">よくある質問</a>
+    <a href="#contact" class="btn btn-primary mobile-link">お問い合わせ</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>「人」が主役のSNSで、<br>集客と採用を変える。</h1>
+        <p class="hero-en">Changing customer acquisition and recruitment through people-first SNS.</p>
+        <p class="hero-sub">企画・撮影・編集・運用まで一気通貫。<br>お店が自走できるまで、伴走します。</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">無料相談する</a>
+          <a href="#service" class="btn btn-outline">サービスを見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data -->
+  <div class="data-strip">
+    <div class="container">
+      <div class="data-grid">
+        <div class="data-item fade-in">
+          <div class="data-number"><span class="counter" data-target="4200">0</span><span class="unit">万人</span></div>
+          <div class="data-label">TikTok 国内MAU</div>
+          <div class="data-source">TikTok Japan, 2025</div>
+        </div>
+        <div class="data-item fade-in">
+          <div class="data-number"><span class="counter" data-target="84">0</span><span class="unit">%</span></div>
+          <div class="data-label">SNSで知った店に来店</div>
+          <div class="data-source">ファンくる調べ, 2023</div>
+        </div>
+        <div class="data-item fade-in">
+          <div class="data-number"><span class="counter" data-target="72.4" data-decimal="1">0</span><span class="unit">%</span></div>
+          <div class="data-label">TikTok採用で応募増</div>
+          <div class="data-source">Suneight調べ, 2024</div>
+        </div>
+        <div class="data-item fade-in">
+          <div class="data-number"><span class="counter" data-target="2375">0</span><span class="unit">億円</span></div>
+          <div class="data-label">TikTok経由の推定消費額</div>
+          <div class="data-source">TikTok Japan, 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pain -->
+  <section class="section" id="pain">
+    <div class="container section-center">
+      <div class="section-label">Problem</div>
+      <h2 class="section-title">こんなお悩み、ありませんか？</h2>
+      <p class="section-desc">SNSの重要性はわかっている。でも、こんな壁にぶつかっていませんか？</p>
+      <div class="pain-grid">
+        <div class="pain-card fade-in">
+          <div class="pain-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3 class="pain-title">何を投稿すればいいかわからない</h3>
+          <p class="pain-desc">トレンドも変わるし、競合も多い。手探りで投稿しても反応がなく、モチベーションが続かない。</p>
+        </div>
+        <div class="pain-card fade-in">
+          <div class="pain-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="pain-title">投稿しても再生数が伸びない</h3>
+          <p class="pain-desc">頑張って動画を作っても、100回再生止まり。アルゴリズムの攻略法がわからず、時間だけが過ぎていく。</p>
+        </div>
+        <div class="pain-card fade-in">
+          <div class="pain-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="pain-title">忙しくてSNSまで手が回らない</h3>
+          <p class="pain-desc">本業の営業や接客で手一杯。SNSが大事なのはわかっているけど、優先順位が上がらない。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section class="section section-gray" id="service">
+    <div class="container">
+      <div class="section-label">Our Strengths</div>
+      <h2 class="section-title">Opus.netが選ばれる3つの理由</h2>
+      <p class="section-desc">「人」を主役にしたSNS運用で、集客と採用の両方に効果を出します。</p>
+      <div class="strength-list">
+        <div class="strength-item fade-in">
+          <div class="strength-visual">
+            <span class="strength-number">01</span>
+            <div class="strength-visual-icon">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <rect x="8" y="14" width="56" height="42" rx="6" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+                <circle cx="28" cy="32" r="7" stroke="#2563eb" stroke-width="2" fill="none"/>
+                <path d="M44 28l7-7m0 0v7m0-7h-7" stroke="#2563eb" stroke-width="2"/>
+                <rect x="18" y="46" width="14" height="3" rx="1.5" fill="#e5e7eb"/>
+                <rect x="38" y="46" width="10" height="3" rx="1.5" fill="#e5e7eb"/>
+              </svg>
+            </div>
+          </div>
+          <div class="strength-text">
+            <div class="strength-text-label">Strength 01</div>
+            <h3>企画から編集まで、<br>全部うちでできる</h3>
+            <p>戦略設計・企画・台本・撮影・編集・投稿まで、全て社内で完結。外注の伝言ゲームがないから、お店の雰囲気がそのまま動画になります。スピードも早い。</p>
+          </div>
+        </div>
+        <div class="strength-item fade-in">
+          <div class="strength-visual">
+            <span class="strength-number">02</span>
+            <div class="strength-visual-icon">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <path d="M18 54L36 18l18 36" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+                <circle cx="36" cy="18" r="5" fill="#2563eb"/>
+                <path d="M26 44h20" stroke="#2563eb" stroke-width="2" stroke-dasharray="4"/>
+                <path d="M36 18v36" stroke="#e5e7eb" stroke-width="1.5" stroke-dasharray="3"/>
+              </svg>
+            </div>
+          </div>
+          <div class="strength-text">
+            <div class="strength-text-label">Strength 02</div>
+            <h3>ゴールは「自走」。<br>ずっと依存させません</h3>
+            <p>高い月額費用をいつまでも払い続ける必要はありません。半年〜1年で、お店のスタッフだけでSNSを回せる状態を目指します。卒業後は月3万円の保守プランで継続サポート。</p>
+          </div>
+        </div>
+        <div class="strength-item fade-in">
+          <div class="strength-visual">
+            <span class="strength-number">03</span>
+            <div class="strength-visual-icon">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <circle cx="26" cy="26" r="9" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+                <circle cx="46" cy="26" r="9" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+                <path d="M18 50c0-7 7-12 18-12s18 5 18 12" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <div class="strength-text">
+            <div class="strength-text-label">Strength 03</div>
+            <h3>集客だけじゃない。<br>採用にも効く</h3>
+            <p>スタッフの人柄や職場の雰囲気が伝わる動画は、お客さんだけでなく「ここで働きたい」という求職者にも届きます。TikTok採用で応募数72.4%増というデータも。集客と採用、一石二鳥のSNS運用。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flow -->
+  <section class="section" id="flow">
+    <div class="container section-center">
+      <div class="section-label">Flow</div>
+      <h2 class="section-title">導入の流れ</h2>
+      <p class="section-desc">お問い合わせから運用開始まで、最短2週間。まずはお気軽にご相談ください。</p>
+      <div class="flow-list fade-in">
+        <div class="flow-step">
+          <div class="flow-number">1</div>
+          <div>
+            <div class="flow-step-title">お問い合わせ</div>
+            <div class="flow-step-desc">フォームまたは<br>LINEからご連絡</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-number">2</div>
+          <div>
+            <div class="flow-step-title">無料ヒアリング</div>
+            <div class="flow-step-desc">現状の課題と<br>ご要望を伺います</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-number">3</div>
+          <div>
+            <div class="flow-step-title">分析・ご提案</div>
+            <div class="flow-step-desc">アカウント診断と<br>改善プランをご提示</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-number">4</div>
+          <div>
+            <div class="flow-step-title">ご契約</div>
+            <div class="flow-step-desc">プランを決定し<br>キックオフMTG</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-number">5</div>
+          <div>
+            <div class="flow-step-title">運用開始</div>
+            <div class="flow-step-desc">毎月のMTGと<br>レポートで改善</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-number">6</div>
+          <div>
+            <div class="flow-step-title">自走（卒業）</div>
+            <div class="flow-step-desc">お店だけで<br>SNSを回せる状態へ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section section-gray" id="industry">
+    <div class="container">
+      <div class="section-label">Industries</div>
+      <h2 class="section-title">「人が主役」の来店型ビジネスに特化</h2>
+      <p class="section-desc">スタッフの魅力を引き出すSNS運用で、業種ごとに最適なアプローチをご提案します。</p>
+      <div class="industry-grid">
+        <div class="industry-card fade-in">
+          <div class="industry-icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="5" y="10" width="26" height="20" rx="3" stroke="#2563eb" stroke-width="2" fill="none"/><path d="M12 10V7a6 6 0 0112 0v3" stroke="#2563eb" stroke-width="2" fill="none"/><circle cx="18" cy="22" r="3" stroke="#2563eb" stroke-width="1.5" fill="none"/></svg>
+          </div>
+          <h3 class="industry-name">バー・コンカフェ</h3>
+          <p class="industry-desc">キャストさんの個性を活かした参加型コンテンツで、ファン化と指名増加を実現。お店の世界観をそのままSNSに。</p>
+          <div class="industry-tags">
+            <span class="industry-tag">TikTok</span>
+            <span class="industry-tag">キャスト動画</span>
+            <span class="industry-tag">ファン化施策</span>
+          </div>
+        </div>
+        <div class="industry-card fade-in">
+          <div class="industry-icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="12" r="5" stroke="#2563eb" stroke-width="2" fill="none"/><path d="M10 30c0-5 4-9 8-9s8 4 8 9" stroke="#2563eb" stroke-width="2" fill="none"/><path d="M14 18l4 4 7-7" stroke="#2563eb" stroke-width="2"/></svg>
+          </div>
+          <h3 class="industry-name">パーソナルジム</h3>
+          <p class="industry-desc">トレーナーの人柄と技術力で信頼構築。ビフォーアフター動画で社会的証明を作り、体験予約につなげます。</p>
+          <div class="industry-tags">
+            <span class="industry-tag">TikTok</span>
+            <span class="industry-tag">ビフォーアフター</span>
+            <span class="industry-tag">体験予約導線</span>
+          </div>
+        </div>
+        <div class="industry-card fade-in">
+          <div class="industry-icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M7 28h22" stroke="#2563eb" stroke-width="2"/><path d="M11 28V16l7-7 7 7v12" stroke="#2563eb" stroke-width="2" fill="none"/><rect x="15" y="20" width="6" height="8" rx="1" stroke="#2563eb" stroke-width="1.5" fill="none"/></svg>
+          </div>
+          <h3 class="industry-name">飲食店</h3>
+          <p class="industry-desc">シェフやスタッフの裏側、調理プロセスを見せることで「行ってみたい」を生む。店舗の雰囲気を映像で伝えます。</p>
+          <div class="industry-tags">
+            <span class="industry-tag">TikTok / Reels</span>
+            <span class="industry-tag">調理動画</span>
+            <span class="industry-tag">来店導線</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">私たちがやること</h2>
+      <p class="section-desc">「人が主役」のコンテンツを、戦略から実行まで一貫して作ります。</p>
+      <div class="approach-grid">
+        <div class="approach-card fade-in">
+          <div class="approach-step">Step 01</div>
+          <h3>戦略設計・ターゲット分析</h3>
+          <p>お店の強み、競合、ターゲット層を分析。「誰に、何を、どう届けるか」の戦略を設計します。闇雲に投稿するのではなく、数字に基づいた計画で進めます。</p>
+        </div>
+        <div class="approach-card fade-in">
+          <div class="approach-step">Step 02</div>
+          <h3>企画・台本づくり</h3>
+          <p>トレンドを押さえつつ、お店ならではのオリジナル企画を提案。「スタッフの個性」が光る台本を作成し、バズだけでなくファン化を狙います。</p>
+        </div>
+        <div class="approach-card fade-in">
+          <div class="approach-step">Step 03</div>
+          <h3>撮影・編集</h3>
+          <p>プロの映像クリエイターが店舗で撮影。カット割り、テロップ、BGM、エフェクトまで全て社内で仕上げます。1回の撮影で4本分をまとめ撮りし、効率的に。</p>
+        </div>
+        <div class="approach-card fade-in">
+          <div class="approach-step">Step 04</div>
+          <h3>投稿・分析・改善</h3>
+          <p>最適なタイミングで投稿し、毎月のレポートで数値を共有。再生数・エンゲージメント・フォロワー推移を分析し、次の企画に反映します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="container">
+      <h2>まずは、お気軽にご相談ください</h2>
+      <p>現在のSNSアカウントを無料で診断します。改善ポイントをお伝えするだけでもOK。</p>
+      <a href="#contact" class="btn btn-white">無料相談する</a>
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <section class="section" id="pricing">
+    <div class="container section-center">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">料金プラン</h2>
+      <p class="section-desc">お店の状況に合わせて、3つのプランからお選びいただけます。</p>
+      <div class="pricing-grid">
+        <div class="pricing-card fade-in">
+          <div class="pricing-name">ライトプラン</div>
+          <div class="pricing-target">まずはSNSを始めたい方</div>
+          <div class="pricing-price"><span class="yen">&yen;</span>150,000<span class="period"> /月</span></div>
+          <ul class="pricing-features">
+            <li>戦略MTG 月2回</li>
+            <li>企画・台本作成 月8本</li>
+            <li>撮影・編集 月4本</li>
+            <li>月次レポート</li>
+            <li>インハウス化支援</li>
+          </ul>
+        </div>
+        <div class="pricing-card featured fade-in">
+          <div class="pricing-badge">RECOMMENDED</div>
+          <div class="pricing-name">レギュラープラン</div>
+          <div class="pricing-target">しっかり成果を出したい方</div>
+          <div class="pricing-price"><span class="yen">&yen;</span>300,000<span class="period"> /月</span></div>
+          <ul class="pricing-features">
+            <li>ライトプランの全て</li>
+            <li>撮影・編集 月8本に増量</li>
+            <li>投稿代行</li>
+            <li>コメント一次対応</li>
+          </ul>
+        </div>
+        <div class="pricing-card fade-in">
+          <div class="pricing-name">フルプラン</div>
+          <div class="pricing-target">SNS運用を全てお任せしたい方</div>
+          <div class="pricing-price"><span class="yen">&yen;</span>500,000<span class="period"> /月</span></div>
+          <ul class="pricing-features">
+            <li>レギュラープランの全て</li>
+            <li>DM一次対応</li>
+            <li>ストーリー投稿 月30回</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pricing-sub fade-in">
+        <div class="pricing-sub-card">
+          <div class="pricing-sub-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="pricing-sub-name">体験パック</div>
+            <div class="pricing-sub-price">&yen;10,000<span style="font-size:12px;color:var(--text-light);font-weight:400">（単発）</span></div>
+            <div class="pricing-sub-desc">アカウント診断 + 30日運用プラン + プロフィール改善案 + 60分オンラインコンサル。まずはここから。</div>
+          </div>
+        </div>
+        <div class="pricing-sub-card">
+          <div class="pricing-sub-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="pricing-sub-name">保守プラン</div>
+            <div class="pricing-sub-price">&yen;30,000<span style="font-size:12px;color:var(--text-light);font-weight:400"> /月</span></div>
+            <div class="pricing-sub-desc">自走（卒業）後のサポート。月1回のオンラインMTG + チャット相談無制限。トレンド共有も。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-gray" id="faq">
+    <div class="container">
+      <div class="section-center">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">よくある質問</h2>
+        <p class="section-desc">ご検討中の方からよくいただく質問にお答えします。</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">効果はどのくらいで出ますか？</button>
+          <div class="faq-answer"><p>認知拡大（フォロワー増加・再生数アップ）は1〜2ヶ月、来店や問い合わせなどの実際の成果は3ヶ月を目安にしています。毎月のレポートで数字を共有しながら、改善を重ねていきます。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">他のSNS運用会社と何が違いますか？</button>
+          <div class="faq-answer"><p>大きく3つです。まず、企画から編集まで全て社内で完結するのでスピードが早く、お店の雰囲気を正確に反映できます。次に、ゴールを「自走」に設定しているので、ずっと高い費用を払い続ける必要がありません。そして、集客だけでなく採用にも効果が出るSNS運用を設計します。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">途中で解約できますか？</button>
+          <div class="faq-answer"><p>はい、もちろんです。むしろ、お店だけでSNSを回せるようになったら「卒業」してほしいと思っています。卒業後は月3万円の保守プランで、必要な時だけサポートを受けられます。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">どのSNSに対応していますか？</button>
+          <div class="faq-answer"><p>TikTokを中心に、Instagram（リール）、YouTube Shortsに対応しています。特にTikTokは拡散力が高く、フォロワーが少なくても再生数が伸びやすいため、新規のお店にも効果的です。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">撮影はどこでやりますか？</button>
+          <div class="faq-answer"><p>基本的にお店に伺って撮影します。月2回の撮影で、1回あたり4本分をまとめ撮り。営業時間外やオープン前の時間を使うので、お店の営業に影響はありません。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">SNSのアカウントを持っていないのですが…</button>
+          <div class="faq-answer"><p>問題ありません。アカウント開設からプロフィール設計まで、全てサポートします。まずは体験パック（1万円）で、現状の分析と最適なスタートプランをご提案します。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-center">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">無料相談・お問い合わせ</h2>
+        <p class="section-desc">まずはお気軽にご相談ください。現在のアカウントの無料診断だけでもOKです。</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info fade-in">
+          <h3>お気軽にお問い合わせください</h3>
+          <p>フォームからのお問い合わせは、通常1営業日以内にご返信いたします。</p>
+          <div class="contact-detail">
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">所在地</div>
+                <div class="contact-detail-value">東京都台東区浅草橋5-5-5 6F</div>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">メール</div>
+                <div class="contact-detail-value">info@opus-net.net</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form fade-in" id="contactForm" action="#" method="POST">
+          <div class="form-group">
+            <label class="form-label">会社名・店舗名<span class="required">*</span></label>
+            <input type="text" class="form-input" name="company" required placeholder="例: BAR SAMPLE">
+          </div>
+          <div class="form-group">
+            <label class="form-label">お名前<span class="required">*</span></label>
+            <input type="text" class="form-input" name="name" required placeholder="例: 山田 太郎">
+          </div>
+          <div class="form-group">
+            <label class="form-label">メールアドレス<span class="required">*</span></label>
+            <input type="email" class="form-input" name="email" required placeholder="例: info@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">電話番号<span class="optional">任意</span></label>
+            <input type="tel" class="form-input" name="phone" placeholder="例: 090-1234-5678">
+          </div>
+          <div class="form-group">
+            <label class="form-label">SNSアカウント<span class="optional">任意</span></label>
+            <input type="text" class="form-input" name="sns" placeholder="例: @sample_bar (TikTok / Instagram)">
+          </div>
+          <div class="form-group">
+            <label class="form-label">ご相談内容<span class="required">*</span></label>
+            <textarea class="form-input" name="message" required placeholder="例: SNS運用を始めたいが何から手をつけていいかわからない。まずは相談したい。"></textarea>
+          </div>
+          <button type="submit" class="form-submit">送信する</button>
+          <p class="form-note">送信後、1営業日以内にご連絡いたします。</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="logo.png" alt="opus.net" width="100" height="26">
+          <span>株式会社Opus.net</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="https://opus-net.net/" target="_blank" rel="noopener">コーポレートサイト</a></li>
+          <li><a href="https://opus-net.net/privacypolicy" target="_blank" rel="noopener">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="footer-copy">&copy; 2026 Opus.net Inc. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+    // Counter
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.target);
+      const decimal = parseInt(el.dataset.decimal) || 0;
+      const duration = 1800;
+      const start = performance.now();
+      function update(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const ease = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+        const v = target * ease;
+        el.textContent = decimal > 0 ? v.toFixed(decimal) : Math.floor(v).toLocaleString();
+        if (p < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    // Observer
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          e.target.querySelectorAll('.counter').forEach(c => animateCounter(c));
+          if (e.target.classList.contains('counter')) animateCounter(e.target);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    // FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!open) item.classList.add('open');
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 70, behavior: 'smooth' });
+      });
+    });
+
+    // Form
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('お問い合わせありがとうございます。\n1営業日以内にご連絡いたします。');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
