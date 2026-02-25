@@ -182,20 +182,18 @@
       position: absolute; top: 14px; left: 10px; right: 10px; z-index: 5;
       display: flex; align-items: center; gap: 6px; padding-top: 30px;
     }
-    .tt-back {
-      color: #fff; font-size: 16px; font-weight: 300; text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-      width: 20px; text-align: center;
+    .tt-back-arrow {
+      flex-shrink: 0; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
     }
     .tt-search {
       flex: 1; background: rgba(255,255,255,0.15); border-radius: 20px;
-      padding: 5px 10px; display: flex; align-items: center; gap: 4px;
+      padding: 6px 10px; display: flex; align-items: center; gap: 5px;
       backdrop-filter: blur(4px);
     }
-    .tt-search-icon { color: rgba(255,255,255,0.6); font-size: 8px; }
-    .tt-search-text { color: rgba(255,255,255,0.5); font-size: 8px; }
+    .tt-search-text { color: rgba(255,255,255,0.5); font-size: 8.5px; }
     .tt-search-btn {
-      color: #fff; font-size: 8px; font-weight: 700; padding: 0 4px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+      color: #fff; font-size: 9px; font-weight: 700; padding: 0 2px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5); flex-shrink: 0;
     }
     /* TikTok sidebar */
     .tt-sidebar {
@@ -701,48 +699,61 @@
             <img src="hero-tiktok.jpg" alt="コンセプトカフェ TikTok" class="phone-screen">
             <div class="tt-top-gradient"></div>
             <div class="tt-bottom-gradient"></div>
-            <!-- TikTok top bar -->
+
+            <!-- TikTok top: search bar -->
             <div class="tt-top">
-              <span class="tt-back">‹</span>
+              <svg class="tt-back-arrow" width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M9 1L2 8l7 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <div class="tt-search">
-                <span class="tt-search-icon">🔍</span>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="rgba(255,255,255,0.5)" stroke-width="2"/><path d="M16 16l4.5 4.5" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/></svg>
                 <span class="tt-search-text">関連するコンテンツを見つける</span>
               </div>
               <span class="tt-search-btn">検索</span>
             </div>
-            <!-- TikTok sidebar -->
+
+            <!-- TikTok right sidebar -->
             <div class="tt-sidebar">
+              <!-- Avatar + follow -->
               <div class="tt-avatar"><div style="width:100%;height:100%;background:linear-gradient(135deg,#e8b,#b8e);"></div></div>
+              <!-- Heart / Like -->
               <div class="tt-sidebar-item">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#fff"/></svg>
+                <svg width="30" height="30" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#fff"/></svg>
                 <span class="tt-sidebar-count">6,175</span>
               </div>
+              <!-- Comment (speech bubble with ...) -->
               <div class="tt-sidebar-item">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" fill="#fff"/></svg>
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 5.81 2 10.5c0 2.49 1.3 4.73 3.36 6.27L4 21l4.41-2.19c1.13.38 2.34.59 3.59.59 5.52 0 10-3.81 10-8.5S17.52 2 12 2z" fill="#fff"/><circle cx="8.5" cy="10.5" r="1" fill="#000"/><circle cx="12" cy="10.5" r="1" fill="#000"/><circle cx="15.5" cy="10.5" r="1" fill="#000"/></svg>
                 <span class="tt-sidebar-count">380</span>
               </div>
+              <!-- Bookmark (flag) -->
               <div class="tt-sidebar-item">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" fill="#fff"/></svg>
+                <svg width="30" height="30" viewBox="0 0 24 24"><path d="M6 2h12a1 1 0 0 1 1 1v19.4a.5.5 0 0 1-.77.42L12 19l-6.23 3.82A.5.5 0 0 1 5 22.4V3a1 1 0 0 1 1-1z" fill="#fff"/></svg>
                 <span class="tt-sidebar-count">7,894</span>
               </div>
+              <!-- Share (curved forward arrow) -->
               <div class="tt-sidebar-item">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2z" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M15 13l-3 3-3-3" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M12 7v9" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M15 5l5 5-5 5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 10H9a5 5 0 0 0-5 5v2" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span class="tt-sidebar-count">1,021</span>
               </div>
+              <!-- Music disc -->
               <div class="tt-record"></div>
             </div>
-            <!-- TikTok bottom text -->
+
+            <!-- TikTok bottom left text -->
             <div class="tt-bottom">
               <div class="tt-username">秋葉原クラリスベール · 2025-8-22</div>
-              <div class="tt-caption">ドアを開けて言いたい神客エピソード✨ #コンカフェ #コンカフェ嬢 #秋葉原 ...もっと見る</div>
+              <div class="tt-caption">いつもありがとうございます！ @ち @り<br>んか @まいな #クラリスべ... <span style="font-weight:700;">もっと見る</span></div>
             </div>
+
             <!-- TikTok comment bar -->
             <div class="tt-comment-bar">
               <div class="tt-comment-input">すてきなコメントを書く...</div>
               <div class="tt-comment-icons">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#fff" stroke-width="1.5"/><circle cx="8.5" cy="10" r="1.5" fill="#fff"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="#fff" stroke-width="1.5" fill="none"/></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="9" cy="10" r="1" fill="#fff"/><circle cx="15" cy="10" r="1" fill="#fff"/></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="#fff" stroke-width="1.5" fill="none"/><path d="M8 12h8M12 8v8" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <!-- Photo -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><circle cx="8" cy="9" r="2" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><path d="M2 17l5-5 3 3 4-4 8 8v1a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-3z" fill="rgba(255,255,255,0.7)"/></svg>
+                <!-- Emoji -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><path d="M8 14.5s1.5 2 4 2 4-2 4-2" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="9" cy="10" r="1.2" fill="rgba(255,255,255,0.7)"/><circle cx="15" cy="10" r="1.2" fill="rgba(255,255,255,0.7)"/></svg>
+                <!-- @ mention -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round"/></svg>
               </div>
             </div>
           </div>
