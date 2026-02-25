@@ -120,11 +120,43 @@
       background: var(--bg);
       position: relative;
     }
-    .hero-content {
-      max-width: 720px;
+    .hero > .container {
+      display: flex; align-items: center; gap: 60px;
     }
+    .hero-content {
+      max-width: 560px; flex: 1;
+    }
+    .hero-phone {
+      flex-shrink: 0;
+    }
+    .phone-mockup {
+      width: 220px;
+      background: #000;
+      border-radius: 32px;
+      padding: 10px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      position: relative;
+    }
+    .phone-mockup::before {
+      content: '';
+      position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+      width: 80px; height: 22px; background: #000; border-radius: 12px; z-index: 2;
+    }
+    .phone-screen {
+      width: 100%; border-radius: 22px; display: block;
+      aspect-ratio: 9/16; object-fit: cover;
+    }
+    .phone-tiktok-ui {
+      position: absolute; bottom: 20px; right: 18px;
+      display: flex; flex-direction: column; gap: 16px; align-items: center;
+    }
+    .phone-tiktok-ui span {
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+      color: #fff; font-size: 9px; font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+    .phone-tiktok-ui svg { filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)); }
     .hero h1 {
-      font-size: clamp(32px, 5vw, 48px);
+      font-size: clamp(28px, 4.5vw, 44px);
       font-weight: 900;
       line-height: 1.4;
       color: var(--dark);
@@ -493,6 +525,11 @@
       .flow-number { width: 48px; height: 48px; font-size: 18px; flex-shrink: 0; margin: 0; }
       .pricing-sub { grid-template-columns: 1fr; }
       .hero { padding: 120px 0 64px; }
+      .hero > .container { flex-direction: column; text-align: center; gap: 40px; }
+      .hero-content { max-width: 100%; }
+      .hero-buttons { justify-content: center; }
+      .hero-sub { max-width: 100%; }
+      .phone-mockup { width: 180px; }
     }
   </style>
 </head>
@@ -538,6 +575,16 @@
         <div class="hero-buttons">
           <a href="#contact" class="btn btn-primary">無料相談する</a>
           <a href="#service" class="btn btn-outline">サービスを見る</a>
+        </div>
+      </div>
+      <div class="hero-phone">
+        <div class="phone-mockup">
+          <img src="hero-tiktok.jpg" alt="コンセプトカフェ TikTok" class="phone-screen">
+          <div class="phone-tiktok-ui">
+            <span><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#fff"/></svg>2.5万</span>
+            <span><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="#fff"/></svg>50</span>
+            <span><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" fill="#fff"/></svg>1,508</span>
+          </div>
         </div>
       </div>
     </div>
