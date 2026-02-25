@@ -130,10 +130,10 @@
       flex-shrink: 0;
     }
     .phone-mockup {
-      width: 300px;
+      width: 280px;
       background: linear-gradient(145deg, #2a2a2e, #1a1a1e);
-      border-radius: 52px;
-      padding: 4px;
+      border-radius: 48px;
+      padding: 3px;
       box-shadow:
         0 24px 64px rgba(0,0,0,0.2),
         0 2px 4px rgba(0,0,0,0.1),
@@ -143,44 +143,74 @@
     }
     .phone-inner {
       background: #000;
-      border-radius: 48px;
-      padding: 5px;
+      border-radius: 45px;
+      padding: 4px;
       position: relative;
       overflow: hidden;
     }
     .phone-dynamic-island {
-      position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
-      width: 100px; height: 26px; background: #000; border-radius: 20px; z-index: 6;
+      position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+      width: 90px; height: 24px; background: #000; border-radius: 20px; z-index: 8;
     }
     .phone-dynamic-island::before {
       content: '';
-      position: absolute; top: 8px; left: 16px;
-      width: 10px; height: 10px; background: #1a1a2e; border-radius: 50%;
+      position: absolute; top: 7px; left: 14px;
+      width: 9px; height: 9px; background: #1a1a2e; border-radius: 50%;
       box-shadow: inset 0 0 2px rgba(255,255,255,0.15);
     }
     .phone-screen {
-      width: 100%; border-radius: 43px; display: block;
-      aspect-ratio: 9/16; object-fit: cover;
+      width: 100%; border-radius: 41px; display: block;
+      aspect-ratio: 9/19.5; object-fit: cover;
     }
     .phone-side-btn {
-      position: absolute; right: -2px; top: 150px;
+      position: absolute; right: -2px; top: 170px;
       width: 3px; height: 56px; background: linear-gradient(180deg, #3a3a3e, #2a2a2e);
       border-radius: 0 2px 2px 0;
     }
     .phone-side-btn2 {
-      position: absolute; left: -2px; top: 125px;
+      position: absolute; left: -2px; top: 145px;
       width: 3px; height: 36px; background: linear-gradient(180deg, #3a3a3e, #2a2a2e);
       border-radius: 2px 0 0 2px;
     }
     .phone-side-btn3 {
-      position: absolute; left: -2px; top: 175px;
+      position: absolute; left: -2px; top: 195px;
       width: 3px; height: 56px; background: linear-gradient(180deg, #3a3a3e, #2a2a2e);
       border-radius: 2px 0 0 2px;
     }
-    /* TikTok top bar */
+
+    /* === iOS Status bar === */
+    .tt-statusbar {
+      position: absolute; top: 6px; left: 20px; right: 20px; z-index: 7;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 6px 4px;
+    }
+    .tt-statusbar-time {
+      color: #fff; font-size: 11px; font-weight: 700; font-family: 'SF Pro Display', -apple-system, sans-serif;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+    .tt-statusbar-right {
+      display: flex; align-items: center; gap: 4px;
+    }
+    .tt-statusbar-right svg { filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)); }
+    .tt-statusbar-battery {
+      display: flex; align-items: center; gap: 1px;
+    }
+    .tt-statusbar-battery-body {
+      width: 20px; height: 9px; border: 1.5px solid #fff; border-radius: 2px;
+      position: relative; overflow: hidden;
+    }
+    .tt-statusbar-battery-body::after {
+      content: ''; position: absolute; top: 1px; left: 1px; bottom: 1px;
+      width: 70%; background: #fff; border-radius: 1px;
+    }
+    .tt-statusbar-battery-tip {
+      width: 2px; height: 4px; background: #fff; border-radius: 0 1px 1px 0;
+    }
+
+    /* === TikTok search bar === */
     .tt-top {
-      position: absolute; top: 14px; left: 10px; right: 10px; z-index: 5;
-      display: flex; align-items: center; gap: 6px; padding-top: 30px;
+      position: absolute; top: 32px; left: 8px; right: 8px; z-index: 7;
+      display: flex; align-items: center; gap: 6px;
     }
     .tt-back-arrow {
       flex-shrink: 0; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
@@ -188,24 +218,25 @@
     .tt-search {
       flex: 1; background: rgba(255,255,255,0.15); border-radius: 20px;
       padding: 6px 10px; display: flex; align-items: center; gap: 5px;
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.08);
     }
-    .tt-search-text { color: rgba(255,255,255,0.5); font-size: 8.5px; }
+    .tt-search-text { color: rgba(255,255,255,0.5); font-size: 8px; white-space: nowrap; }
     .tt-search-btn {
       color: #fff; font-size: 9px; font-weight: 700; padding: 0 2px;
       text-shadow: 0 1px 2px rgba(0,0,0,0.5); flex-shrink: 0;
     }
-    /* TikTok sidebar */
+
+    /* === TikTok right sidebar === */
     .tt-sidebar {
-      position: absolute; bottom: 100px; right: 10px;
-      display: flex; flex-direction: column; gap: 18px; align-items: center; z-index: 5;
+      position: absolute; bottom: 100px; right: 8px;
+      display: flex; flex-direction: column; gap: 16px; align-items: center; z-index: 5;
     }
     .tt-sidebar-item {
       display: flex; flex-direction: column; align-items: center; gap: 2px;
     }
     .tt-sidebar-item svg { filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5)); }
     .tt-sidebar-count {
-      color: #fff; font-size: 9px; font-weight: 700;
+      color: #fff; font-size: 9px; font-weight: 600;
       text-shadow: 0 1px 2px rgba(0,0,0,0.6);
     }
     .tt-avatar {
@@ -219,53 +250,63 @@
       font-size: 12px; font-weight: 900; line-height: 16px; text-align: center;
       border-radius: 50%; border: 1.5px solid #fff;
     }
-    .tt-avatar img { width: 100%; height: 100%; object-fit: cover; }
     .tt-record {
-      width: 30px; height: 30px; border-radius: 50%;
+      width: 28px; height: 28px; border-radius: 50%;
       background: conic-gradient(#333, #555, #333); border: 5px solid #333;
-      animation: tt-spin 4s linear infinite; margin-top: 6px;
+      animation: tt-spin 4s linear infinite; margin-top: 4px;
+      position: relative;
     }
     .tt-record::after {
       content: ''; display: block; width: 10px; height: 10px;
-      background: #ccc; border-radius: 50%; margin: 5px auto;
+      background: #ccc; border-radius: 50%; margin: 4px auto;
     }
     @keyframes tt-spin { to { transform: rotate(360deg); } }
-    /* TikTok bottom text */
+
+    /* === TikTok bottom left text === */
     .tt-bottom {
-      position: absolute; bottom: 52px; left: 10px; right: 54px; z-index: 5;
+      position: absolute; bottom: 52px; left: 10px; right: 52px; z-index: 5;
     }
     .tt-username {
       color: #fff; font-size: 10px; font-weight: 700;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.6); margin-bottom: 4px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6); margin-bottom: 3px;
     }
     .tt-caption {
-      color: #fff; font-size: 8.5px; line-height: 1.5;
+      color: #fff; font-size: 8px; line-height: 1.5;
       text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-      overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
     }
-    /* TikTok comment bar */
+
+    /* === TikTok comment bar === */
     .tt-comment-bar {
-      position: absolute; bottom: 14px; left: 10px; right: 10px; z-index: 5;
+      position: absolute; bottom: 16px; left: 8px; right: 8px; z-index: 5;
       display: flex; align-items: center; gap: 6px;
     }
     .tt-comment-input {
-      flex: 1; background: rgba(255,255,255,0.12); border-radius: 20px;
-      padding: 6px 10px; color: rgba(255,255,255,0.4); font-size: 8px;
-      backdrop-filter: blur(4px);
+      flex: 1; background: rgba(255,255,255,0.1); border-radius: 20px;
+      padding: 7px 10px; color: rgba(255,255,255,0.35); font-size: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
     }
     .tt-comment-icons {
-      display: flex; gap: 6px;
+      display: flex; gap: 6px; align-items: center;
     }
     .tt-comment-icons svg { filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)); }
+
+    /* === Home indicator === */
+    .tt-home-indicator {
+      position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%);
+      width: 100px; height: 4px; background: rgba(255,255,255,0.6);
+      border-radius: 4px; z-index: 5;
+    }
+
+    /* === Gradients === */
     .tt-bottom-gradient {
-      position: absolute; bottom: 0; left: 0; right: 0; height: 180px;
-      background: linear-gradient(transparent, rgba(0,0,0,0.55));
-      border-radius: 0 0 43px 43px; z-index: 4; pointer-events: none;
+      position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.6));
+      border-radius: 0 0 41px 41px; z-index: 4; pointer-events: none;
     }
     .tt-top-gradient {
-      position: absolute; top: 0; left: 0; right: 0; height: 80px;
+      position: absolute; top: 0; left: 0; right: 0; height: 70px;
       background: linear-gradient(rgba(0,0,0,0.3), transparent);
-      border-radius: 43px 43px 0 0; z-index: 4; pointer-events: none;
+      border-radius: 41px 41px 0 0; z-index: 4; pointer-events: none;
     }
     .hero h1 {
       font-size: clamp(28px, 4.5vw, 44px);
@@ -641,7 +682,7 @@
       .hero-content { max-width: 100%; }
       .hero-buttons { justify-content: center; }
       .hero-sub { max-width: 100%; }
-      .phone-mockup { width: 240px; }
+      .phone-mockup { width: 220px; }
     }
   </style>
 </head>
@@ -700,11 +741,27 @@
             <div class="tt-top-gradient"></div>
             <div class="tt-bottom-gradient"></div>
 
-            <!-- TikTok top: search bar -->
+            <!-- iOS Status bar -->
+            <div class="tt-statusbar">
+              <span class="tt-statusbar-time">17:13</span>
+              <div class="tt-statusbar-right">
+                <!-- Signal bars -->
+                <svg width="14" height="10" viewBox="0 0 17 10"><rect x="0" y="7" width="3" height="3" rx="0.5" fill="#fff"/><rect x="4.5" y="4.5" width="3" height="5.5" rx="0.5" fill="#fff"/><rect x="9" y="2" width="3" height="8" rx="0.5" fill="#fff"/><rect x="13.5" y="0" width="3" height="10" rx="0.5" fill="#fff"/></svg>
+                <!-- WiFi -->
+                <svg width="12" height="10" viewBox="0 0 16 12" fill="#fff"><path d="M8 9.6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM4.3 7.4a5.2 5.2 0 0 1 7.4 0l-.9.9a3.9 3.9 0 0 0-5.6 0l-.9-.9zM1.8 4.9a8.7 8.7 0 0 1 12.4 0l-.9.9a7.4 7.4 0 0 0-10.6 0l-.9-.9z"/></svg>
+                <!-- Battery -->
+                <div class="tt-statusbar-battery">
+                  <div class="tt-statusbar-battery-body"></div>
+                  <div class="tt-statusbar-battery-tip"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TikTok search bar -->
             <div class="tt-top">
-              <svg class="tt-back-arrow" width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M9 1L2 8l7 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="tt-back-arrow" width="9" height="15" viewBox="0 0 10 16" fill="none"><path d="M9 1L2 8l7 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <div class="tt-search">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="rgba(255,255,255,0.5)" stroke-width="2"/><path d="M16 16l4.5 4.5" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/></svg>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="rgba(255,255,255,0.5)" stroke-width="2"/><path d="M16 16l4.5 4.5" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/></svg>
                 <span class="tt-search-text">関連するコンテンツを見つける</span>
               </div>
               <span class="tt-search-btn">検索</span>
@@ -712,29 +769,23 @@
 
             <!-- TikTok right sidebar -->
             <div class="tt-sidebar">
-              <!-- Avatar + follow -->
               <div class="tt-avatar"><div style="width:100%;height:100%;background:linear-gradient(135deg,#e8b,#b8e);"></div></div>
-              <!-- Heart / Like -->
               <div class="tt-sidebar-item">
-                <svg width="30" height="30" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#fff"/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#fff"/></svg>
                 <span class="tt-sidebar-count">6,175</span>
               </div>
-              <!-- Comment (speech bubble with ...) -->
               <div class="tt-sidebar-item">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 5.81 2 10.5c0 2.49 1.3 4.73 3.36 6.27L4 21l4.41-2.19c1.13.38 2.34.59 3.59.59 5.52 0 10-3.81 10-8.5S17.52 2 12 2z" fill="#fff"/><circle cx="8.5" cy="10.5" r="1" fill="#000"/><circle cx="12" cy="10.5" r="1" fill="#000"/><circle cx="15.5" cy="10.5" r="1" fill="#000"/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 5.81 2 10.5c0 2.49 1.3 4.73 3.36 6.27L4 21l4.41-2.19c1.13.38 2.34.59 3.59.59 5.52 0 10-3.81 10-8.5S17.52 2 12 2z" fill="#fff"/><circle cx="8.5" cy="10.5" r="1" fill="#000"/><circle cx="12" cy="10.5" r="1" fill="#000"/><circle cx="15.5" cy="10.5" r="1" fill="#000"/></svg>
                 <span class="tt-sidebar-count">380</span>
               </div>
-              <!-- Bookmark (flag) -->
               <div class="tt-sidebar-item">
-                <svg width="30" height="30" viewBox="0 0 24 24"><path d="M6 2h12a1 1 0 0 1 1 1v19.4a.5.5 0 0 1-.77.42L12 19l-6.23 3.82A.5.5 0 0 1 5 22.4V3a1 1 0 0 1 1-1z" fill="#fff"/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24"><path d="M6 2h12a1 1 0 0 1 1 1v19.4a.5.5 0 0 1-.77.42L12 19l-6.23 3.82A.5.5 0 0 1 5 22.4V3a1 1 0 0 1 1-1z" fill="#fff"/></svg>
                 <span class="tt-sidebar-count">7,894</span>
               </div>
-              <!-- Share (curved forward arrow) -->
               <div class="tt-sidebar-item">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M15 5l5 5-5 5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 10H9a5 5 0 0 0-5 5v2" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M15 5l5 5-5 5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 10H9a5 5 0 0 0-5 5v2" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span class="tt-sidebar-count">1,021</span>
               </div>
-              <!-- Music disc -->
               <div class="tt-record"></div>
             </div>
 
@@ -748,14 +799,14 @@
             <div class="tt-comment-bar">
               <div class="tt-comment-input">すてきなコメントを書く...</div>
               <div class="tt-comment-icons">
-                <!-- Photo -->
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><circle cx="8" cy="9" r="2" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><path d="M2 17l5-5 3 3 4-4 8 8v1a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-3z" fill="rgba(255,255,255,0.7)"/></svg>
-                <!-- Emoji -->
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><path d="M8 14.5s1.5 2 4 2 4-2 4-2" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="9" cy="10" r="1.2" fill="rgba(255,255,255,0.7)"/><circle cx="15" cy="10" r="1.2" fill="rgba(255,255,255,0.7)"/></svg>
-                <!-- @ mention -->
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><circle cx="8" cy="9" r="2" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><path d="M2 17l5-5 3 3 4-4 8 8v1a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-3z" fill="rgba(255,255,255,0.6)"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><path d="M8 14.5s1.5 2 4 2 4-2 4-2" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="9" cy="10" r="1.2" fill="rgba(255,255,255,0.6)"/><circle cx="15" cy="10" r="1.2" fill="rgba(255,255,255,0.6)"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/></svg>
               </div>
             </div>
+
+            <!-- iOS Home indicator -->
+            <div class="tt-home-indicator"></div>
           </div>
         </div>
       </div>
