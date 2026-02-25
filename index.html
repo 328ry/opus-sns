@@ -130,12 +130,12 @@
       flex-shrink: 0;
     }
     .phone-mockup {
-      width: 240px;
+      width: 300px;
       background: linear-gradient(145deg, #2a2a2e, #1a1a1e);
-      border-radius: 44px;
+      border-radius: 52px;
       padding: 4px;
       box-shadow:
-        0 24px 64px rgba(0,0,0,0.18),
+        0 24px 64px rgba(0,0,0,0.2),
         0 2px 4px rgba(0,0,0,0.1),
         inset 0 1px 0 rgba(255,255,255,0.08);
       position: relative;
@@ -143,96 +143,131 @@
     }
     .phone-inner {
       background: #000;
-      border-radius: 40px;
+      border-radius: 48px;
       padding: 5px;
       position: relative;
       overflow: hidden;
     }
-    .phone-mockup::before {
-      content: '';
-      position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
-      width: 90px; height: 24px; background: #000; border-radius: 20px; z-index: 3;
-    }
     .phone-dynamic-island {
-      position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
-      width: 84px; height: 22px; background: #000; border-radius: 20px; z-index: 4;
+      position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+      width: 100px; height: 26px; background: #000; border-radius: 20px; z-index: 6;
     }
     .phone-dynamic-island::before {
       content: '';
-      position: absolute; top: 7px; left: 14px;
-      width: 8px; height: 8px; background: #1a1a2e; border-radius: 50%;
+      position: absolute; top: 8px; left: 16px;
+      width: 10px; height: 10px; background: #1a1a2e; border-radius: 50%;
       box-shadow: inset 0 0 2px rgba(255,255,255,0.15);
     }
     .phone-screen {
-      width: 100%; border-radius: 34px; display: block;
+      width: 100%; border-radius: 43px; display: block;
       aspect-ratio: 9/16; object-fit: cover;
     }
     .phone-side-btn {
-      position: absolute; right: -2px; top: 120px;
-      width: 3px; height: 48px; background: linear-gradient(180deg, #3a3a3e, #2a2a2e);
+      position: absolute; right: -2px; top: 150px;
+      width: 3px; height: 56px; background: linear-gradient(180deg, #3a3a3e, #2a2a2e);
       border-radius: 0 2px 2px 0;
     }
     .phone-side-btn2 {
-      position: absolute; left: -2px; top: 100px;
-      width: 3px; height: 32px; background: linear-gradient(180deg, #3a3a3e, #2a2a2e);
+      position: absolute; left: -2px; top: 125px;
+      width: 3px; height: 36px; background: linear-gradient(180deg, #3a3a3e, #2a2a2e);
       border-radius: 2px 0 0 2px;
     }
     .phone-side-btn3 {
-      position: absolute; left: -2px; top: 145px;
-      width: 3px; height: 48px; background: linear-gradient(180deg, #3a3a3e, #2a2a2e);
+      position: absolute; left: -2px; top: 175px;
+      width: 3px; height: 56px; background: linear-gradient(180deg, #3a3a3e, #2a2a2e);
       border-radius: 2px 0 0 2px;
     }
-    /* TikTok UI overlay */
+    /* TikTok top bar */
+    .tt-top {
+      position: absolute; top: 14px; left: 10px; right: 10px; z-index: 5;
+      display: flex; align-items: center; gap: 6px; padding-top: 30px;
+    }
+    .tt-back {
+      color: #fff; font-size: 16px; font-weight: 300; text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+      width: 20px; text-align: center;
+    }
+    .tt-search {
+      flex: 1; background: rgba(255,255,255,0.15); border-radius: 20px;
+      padding: 5px 10px; display: flex; align-items: center; gap: 4px;
+      backdrop-filter: blur(4px);
+    }
+    .tt-search-icon { color: rgba(255,255,255,0.6); font-size: 8px; }
+    .tt-search-text { color: rgba(255,255,255,0.5); font-size: 8px; }
+    .tt-search-btn {
+      color: #fff; font-size: 8px; font-weight: 700; padding: 0 4px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+    /* TikTok sidebar */
     .tt-sidebar {
-      position: absolute; bottom: 80px; right: 8px;
-      display: flex; flex-direction: column; gap: 14px; align-items: center; z-index: 5;
+      position: absolute; bottom: 100px; right: 10px;
+      display: flex; flex-direction: column; gap: 18px; align-items: center; z-index: 5;
     }
     .tt-sidebar-item {
-      display: flex; flex-direction: column; align-items: center; gap: 1px;
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
     }
     .tt-sidebar-item svg { filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5)); }
     .tt-sidebar-count {
-      color: #fff; font-size: 7px; font-weight: 700;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.6); letter-spacing: -0.2px;
+      color: #fff; font-size: 9px; font-weight: 700;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
     }
     .tt-avatar {
-      width: 28px; height: 28px; border-radius: 50%;
-      border: 1.5px solid #fff; overflow: hidden; margin-bottom: 4px;
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid #fff; overflow: hidden; margin-bottom: 8px;
       background: #333; position: relative;
     }
     .tt-avatar::after {
-      content: '+'; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
-      width: 14px; height: 14px; background: #fe2c55; color: #fff;
-      font-size: 10px; font-weight: 900; line-height: 14px; text-align: center;
-      border-radius: 50%; border: 1px solid #fff;
+      content: '+'; position: absolute; bottom: -7px; left: 50%; transform: translateX(-50%);
+      width: 16px; height: 16px; background: #fe2c55; color: #fff;
+      font-size: 12px; font-weight: 900; line-height: 16px; text-align: center;
+      border-radius: 50%; border: 1.5px solid #fff;
     }
     .tt-avatar img { width: 100%; height: 100%; object-fit: cover; }
     .tt-record {
-      width: 24px; height: 24px; border-radius: 50%;
-      background: conic-gradient(#333, #555, #333); border: 4px solid #333;
-      animation: tt-spin 4s linear infinite; margin-top: 4px;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: conic-gradient(#333, #555, #333); border: 5px solid #333;
+      animation: tt-spin 4s linear infinite; margin-top: 6px;
     }
     .tt-record::after {
-      content: ''; display: block; width: 8px; height: 8px;
-      background: #ccc; border-radius: 50%; margin: 4px auto;
+      content: ''; display: block; width: 10px; height: 10px;
+      background: #ccc; border-radius: 50%; margin: 5px auto;
     }
     @keyframes tt-spin { to { transform: rotate(360deg); } }
+    /* TikTok bottom text */
     .tt-bottom {
-      position: absolute; bottom: 10px; left: 8px; right: 42px; z-index: 5;
+      position: absolute; bottom: 52px; left: 10px; right: 54px; z-index: 5;
     }
     .tt-username {
-      color: #fff; font-size: 8px; font-weight: 700;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.6); margin-bottom: 3px;
+      color: #fff; font-size: 10px; font-weight: 700;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6); margin-bottom: 4px;
     }
     .tt-caption {
-      color: #fff; font-size: 6.5px; line-height: 1.4;
+      color: #fff; font-size: 8.5px; line-height: 1.5;
       text-shadow: 0 1px 2px rgba(0,0,0,0.6);
       overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
     }
+    /* TikTok comment bar */
+    .tt-comment-bar {
+      position: absolute; bottom: 14px; left: 10px; right: 10px; z-index: 5;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .tt-comment-input {
+      flex: 1; background: rgba(255,255,255,0.12); border-radius: 20px;
+      padding: 6px 10px; color: rgba(255,255,255,0.4); font-size: 8px;
+      backdrop-filter: blur(4px);
+    }
+    .tt-comment-icons {
+      display: flex; gap: 6px;
+    }
+    .tt-comment-icons svg { filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)); }
     .tt-bottom-gradient {
-      position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
-      background: linear-gradient(transparent, rgba(0,0,0,0.5));
-      border-radius: 0 0 34px 34px; z-index: 4; pointer-events: none;
+      position: absolute; bottom: 0; left: 0; right: 0; height: 180px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.55));
+      border-radius: 0 0 43px 43px; z-index: 4; pointer-events: none;
+    }
+    .tt-top-gradient {
+      position: absolute; top: 0; left: 0; right: 0; height: 80px;
+      background: linear-gradient(rgba(0,0,0,0.3), transparent);
+      border-radius: 43px 43px 0 0; z-index: 4; pointer-events: none;
     }
     .hero h1 {
       font-size: clamp(28px, 4.5vw, 44px);
@@ -608,7 +643,7 @@
       .hero-content { max-width: 100%; }
       .hero-buttons { justify-content: center; }
       .hero-sub { max-width: 100%; }
-      .phone-mockup { width: 180px; }
+      .phone-mockup { width: 240px; }
     }
   </style>
 </head>
@@ -664,32 +699,51 @@
           <div class="phone-inner">
             <div class="phone-dynamic-island"></div>
             <img src="hero-tiktok.jpg" alt="コンセプトカフェ TikTok" class="phone-screen">
+            <div class="tt-top-gradient"></div>
             <div class="tt-bottom-gradient"></div>
+            <!-- TikTok top bar -->
+            <div class="tt-top">
+              <span class="tt-back">‹</span>
+              <div class="tt-search">
+                <span class="tt-search-icon">🔍</span>
+                <span class="tt-search-text">関連するコンテンツを見つける</span>
+              </div>
+              <span class="tt-search-btn">検索</span>
+            </div>
             <!-- TikTok sidebar -->
             <div class="tt-sidebar">
               <div class="tt-avatar"><div style="width:100%;height:100%;background:linear-gradient(135deg,#e8b,#b8e);"></div></div>
               <div class="tt-sidebar-item">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#fff"/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#fff"/></svg>
                 <span class="tt-sidebar-count">6,175</span>
               </div>
               <div class="tt-sidebar-item">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" fill="#fff"/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" fill="#fff"/></svg>
                 <span class="tt-sidebar-count">380</span>
               </div>
               <div class="tt-sidebar-item">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" fill="#fff"/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" fill="#fff"/></svg>
                 <span class="tt-sidebar-count">7,894</span>
               </div>
               <div class="tt-sidebar-item">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" fill="#fff" transform="rotate(90 12 12)"/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2z" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M15 13l-3 3-3-3" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M12 7v9" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
                 <span class="tt-sidebar-count">1,021</span>
               </div>
               <div class="tt-record"></div>
             </div>
             <!-- TikTok bottom text -->
             <div class="tt-bottom">
-              <div class="tt-username">@concafe_stella · 2025-8-22</div>
-              <div class="tt-caption">ドアを開けて言いたい神客エピソード🚪✨ #コンカフェ #コンカフェ嬢 #秋葉原 もっと見る</div>
+              <div class="tt-username">秋葉原クラリスベール · 2025-8-22</div>
+              <div class="tt-caption">ドアを開けて言いたい神客エピソード✨ #コンカフェ #コンカフェ嬢 #秋葉原 ...もっと見る</div>
+            </div>
+            <!-- TikTok comment bar -->
+            <div class="tt-comment-bar">
+              <div class="tt-comment-input">すてきなコメントを書く...</div>
+              <div class="tt-comment-icons">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#fff" stroke-width="1.5"/><circle cx="8.5" cy="10" r="1.5" fill="#fff"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="#fff" stroke-width="1.5" fill="none"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.5"/><path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="9" cy="10" r="1" fill="#fff"/><circle cx="15" cy="10" r="1" fill="#fff"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="#fff" stroke-width="1.5" fill="none"/><path d="M8 12h8M12 8v8" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
             </div>
           </div>
         </div>
