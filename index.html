@@ -261,13 +261,12 @@
     }
     .tt-record {
       width: 28px; height: 28px; border-radius: 50%;
-      background: conic-gradient(#333, #555, #333); border: 5px solid #333;
+      border: 4px solid #333;
       animation: tt-spin 4s linear infinite; margin-top: 4px;
-      position: relative;
+      position: relative; overflow: hidden;
     }
-    .tt-record::after {
-      content: ''; display: block; width: 10px; height: 10px;
-      background: #ccc; border-radius: 50%; margin: 4px auto;
+    .tt-record img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
     }
     @keyframes tt-spin { to { transform: rotate(360deg); } }
 
@@ -774,7 +773,7 @@
 
                 <!-- TikTok right sidebar -->
                 <div class="tt-sidebar">
-                  <div class="tt-avatar"><div style="width:100%;height:100%;background:linear-gradient(135deg,#e8b,#b8e);"></div></div>
+                  <div class="tt-avatar"><img src="stella-icon.webp" alt="STELLA" style="width:100%;height:100%;object-fit:cover;"></div>
                   <div class="tt-sidebar-item">
                     <svg width="28" height="28" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#fff"/></svg>
                     <span class="tt-sidebar-count">6,175</span>
@@ -791,13 +790,13 @@
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M15 5l5 5-5 5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 10H9a5 5 0 0 0-5 5v2" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     <span class="tt-sidebar-count">1,021</span>
                   </div>
-                  <div class="tt-record"></div>
+                  <div class="tt-record"><img src="stella-icon.webp" alt="STELLA"></div>
                 </div>
 
                 <!-- TikTok bottom left text -->
                 <div class="tt-bottom">
-                  <div class="tt-username">秋葉原クラリスベール · 2025-8-22</div>
-                  <div class="tt-caption">いつもありがとうございます！ @ち @り<br>んか @まいな #クラリスべ... <span style="font-weight:700;">もっと見る</span></div>
+                  <div class="tt-username">STELLA_official · 2025-8-22</div>
+                  <div class="tt-caption">まりの出勤日です☆ 今日も会いに来て<br>ね！ @ルナ @アリア #STELLA #コンカフェ... <span style="font-weight:700;">もっと見る</span></div>
                 </div>
               </div>
 
